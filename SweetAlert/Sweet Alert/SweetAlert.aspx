@@ -26,32 +26,49 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <!-- Sweet Alert  -->
         <div class="card col-md-6 mx-auto mt-5 py-2 border border-secondary-subtle rounded-2 shadow">
             <label class="text-center">Sweet Alert</label>
             <div class="card-body text-center">
-                <asp:Button ID="btnAlert" runat="server" Text="JavaScript Alert" OnClick="btnAlert_Click" CssClass="btn btn-secondary col-md-5" />
+                <asp:Button ID="JS_Alert" runat="server" Text="JavaScript Alert" OnClick="JS_Alert_Click" CssClass="btn btn-secondary col-md-5" />
             </div>
             <div class="card-body text-center">
-                <asp:Button ID="btnQuestion" runat="server" Text="Question ?" OnClick="btnQuestion_Click" CssClass="btn btn-white border border-secondary-subtle col-md-5" />
+                <asp:Button ID="SA_Question" runat="server" Text="Question ?" OnClick="SA_Question_Click" CssClass="btn btn-white border border-secondary-subtle col-md-5" />
             </div>
             <div class="card-body text-center">
-                <asp:Button ID="btnInfo" runat="server" Text="Information !" OnClick="btnInfo_Click" CssClass="btn btn-info col-md-5" />
+                <asp:Button ID="SA_Info" runat="server" Text="Information !" OnClick="SA_Info_Click" CssClass="btn btn-info col-md-5" />
             </div>
             <div class="card-body text-center">
-                <asp:Button ID="btnSuccess" runat="server" Text="Success only" OnClick="btnSuccess_Click" CssClass="btn btn-success col-md-5" />
+                <asp:Button ID="SA_Success_Only" runat="server" Text="Success only" OnClick="SA_Success_Only_Click" CssClass="btn btn-success col-md-5" />
             </div>
             <div class="card-body text-center">
-                <asp:Button ID="btnError" runat="server" Text="Error only" OnClick="btnError_Click" CssClass="btn btn-danger col-md-5" />
+                <asp:Button ID="SA_Error_Only" runat="server" Text="Error only" OnClick="SA_Error_Only_Click" CssClass="btn btn-danger col-md-5" />
+            </div>
+            <div class="card-body text-center">
+                <asp:Button ID="SA_Error_BGblock" runat="server" Text="Error only & BG block" OnClick="SA_Error_BGblock_Click" CssClass="btn btn-danger col-md-5" />
             </div>
         </div>
 
+        <!-- Sweet Alert Redirect  -->
+        <div class="card col-md-6 mx-auto mt-2 py-2 border border-secondary-subtle rounded-2 shadow">
+            <label class="text-center">Sweet Alert Redirect</label>
+            <div class="card-body text-center">
+                <asp:Button ID="SA_Success_Redirect" runat="server" Text="Success with redirect" OnClick="SA_Success_Redirect_Click" CssClass="btn btn-success col-md-5" />
+            </div>
+            <div class="card-body text-center">
+                <asp:Button ID="SA_Success_Redirect_BGblock" runat="server" Text="Success with redirect & BG block" OnClick="SA_Success_Redirect_BGblock_Click" CssClass="btn btn-success col-md-5" />
+            </div>
+        </div>
+
+        <!-- Sweet Alert Advance  -->
         <div class="card col-md-6 mx-auto mt-2 py-2 border border-secondary-subtle rounded-2 shadow">
             <label class="text-center">Sweet Alert Advance</label>
             <div class="card-body text-center">
-                <asp:Button ID="btn1" runat="server" Text="HTML, Icons, Links" OnClick="btn1_Click" CssClass="btn btn-success col-md-5" />
+                <asp:Button ID="SA_Custom_Html_Link" runat="server" Text="HTML, Icons, Links" OnClick="SA_Custom_Html_Link_Click" CssClass="btn btn-success col-md-5" />
             </div>
             <div class="card-body text-center">
-                <asp:Button ID="Button1" runat="server" Text="3 Button Dialouge" OnClick="Button1_Click" CssClass="btn btn-warning col-md-5" />
+                <asp:Button ID="SA_Three_Buttons_Dialouge" runat="server" Text="3 Button Dialouge" OnClick="SA_Three_Buttons_Dialouge_Click" CssClass="btn btn-warning col-md-5" />
             </div>
         </div>
     </form>

@@ -16,63 +16,171 @@ public partial class Sweet_Alert_SweetAlert : System.Web.UI.Page
     }
 
     // javascript alert
-    protected void btnAlert_Click(object sender, EventArgs e)
+    protected void JS_Alert_Click(object sender, EventArgs e)
     {
         ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", "alert('JavaScript Alert!');", true);
     }
 
     // sweet alert question
-    protected void btnQuestion_Click(object sender, EventArgs e)
+    protected void SA_Question_Click(object sender, EventArgs e)
     {
         string title = "No data found !";
         string message = "Please check your query";
         string icon = "question";
         string confirmButtonText = "OK";
 
-        string sweetAlertScript = $"<script>Swal.fire({{ title: '{title}', text: '{message}', icon: '{icon}', confirmButtonText: '{confirmButtonText}' }});</script>";
+        string sweetAlertScript =
+        $@"<script>
+            Swal.fire({{ 
+                title: '{title}', 
+                text: '{message}', 
+                icon: '{icon}', 
+                confirmButtonText: '{confirmButtonText}'
+            }});
+        </script>";
         ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
     }
 
     // sweet info question
-    protected void btnInfo_Click(object sender, EventArgs e)
+    protected void SA_Info_Click(object sender, EventArgs e)
     {
         string title = "Matched!";
         string message = "Selected data matched";
         string icon = "info";
         string confirmButtonText = "OK";
 
-        string sweetAlertScript = $"<script>Swal.fire({{ title: '{title}', text: '{message}', icon: '{icon}', confirmButtonText: '{confirmButtonText}' }});</script>";
+        string sweetAlertScript =
+        $@"<script>
+            Swal.fire({{ 
+                title: '{title}', 
+                text: '{message}', 
+                icon: '{icon}', 
+                confirmButtonText: '{confirmButtonText}'
+            }});
+        </script>";
         ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
     }
 
     // sweet alert success only
-    protected void btnSuccess_Click(object sender, EventArgs e)
+    protected void SA_Success_Only_Click(object sender, EventArgs e)
     {
         string title = "Success!";
         string message = "Saved successfully!";
         string icon = "success";
         string confirmButtonText = "OK";
 
-        string sweetAlertScript = $"<script>Swal.fire({{ title: '{title}', text: '{message}', icon: '{icon}', confirmButtonText: '{confirmButtonText}' }});</script>";
+        string sweetAlertScript =
+        $@"<script>
+            Swal.fire({{ 
+                title: '{title}', 
+                text: '{message}', 
+                icon: '{icon}', 
+                confirmButtonText: '{confirmButtonText}'
+            }});
+        </script>";
         ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
     }
 
     // sweet alert error only
-    protected void btnError_Click(object sender, EventArgs e)
+    protected void SA_Error_Only_Click(object sender, EventArgs e)
     {
         string title = "Oops!";
         string message = "Please check again!";
         string icon = "error";
         string confirmButtonText = "OK";
 
-        string sweetAlertScript = $"<script>Swal.fire({{ title: '{title}', text: '{message}', icon: '{icon}', confirmButtonText: '{confirmButtonText}' }});</script>";
+        string sweetAlertScript =
+        $@"<script>
+            Swal.fire({{ 
+                title: '{title}', 
+                text: '{message}', 
+                icon: '{icon}', 
+                confirmButtonText: '{confirmButtonText}'
+            }});
+        </script>";
         ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
     }
 
-    //------------------============{ Sweet Alert More }============------------------
+    // sweet alert error only block
+    protected void SA_Error_BGblock_Click(object sender, EventArgs e)
+    {
+        string title = "Oops!";
+        string message = "Please check again!";
+        string icon = "error";
+        string confirmButtonText = "OK";
+        string allowOutsideClick = "false"; // Prevent closing on outside click
+
+        string sweetAlertScript =
+        $@"<script>
+            Swal.fire({{ 
+                title: '{title}', 
+                text: '{message}', 
+                icon: '{icon}', 
+                confirmButtonText: '{confirmButtonText}', 
+                allowOutsideClick: {allowOutsideClick}
+            }});
+        </script>";
+        ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
+    }
+
+    //------------------============{ Sweet Alert Redirect }============------------------
+
+    // sweet alert success & redirect
+    protected void SA_Success_Redirect_Click(object sender, EventArgs e)
+    {
+        string title = "Saved!";
+        string message = "Record saved successfully!";
+        string icon = "success";
+        string confirmButtonText = "OK";
+        string redirectUrl = "https://www.google.com";
+
+        string sweetAlertScript =
+            $@"<script>
+                Swal.fire({{ 
+                    title: '{title}', 
+                    text: '{message}', 
+                    icon: '{icon}', 
+                    confirmButtonText: '{confirmButtonText}' 
+                }}).then((result) => {{
+                    if (result.isConfirmed) {{
+                        window.location.href = '{redirectUrl}';
+                    }}
+                }});
+            </script>";
+        ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
+    }
+
+    // sweet alert - success redirect block
+    protected void SA_Success_Redirect_BGblock_Click(object sender, EventArgs e)
+    {
+        string title = "Saved!";
+        string message = "Record saved successfully!";
+        string icon = "success";
+        string confirmButtonText = "OK";
+        string allowOutsideClick = "false"; // Prevent closing on outside click
+        string redirectUrl = "https://www.google.com";
+
+        string sweetAlertScript =
+        $@"<script>
+            Swal.fire({{ 
+                title: '{title}', 
+                text: '{message}', 
+                icon: '{icon}', 
+                confirmButtonText: '{confirmButtonText}', 
+                allowOutsideClick: {allowOutsideClick}
+            }}).then((result) => {{
+                if (result.isConfirmed) {{
+                    window.location.href = '{redirectUrl}';
+                }}
+            }});
+        </script>";
+        ClientScript.RegisterStartupScript(this.GetType(), "sweetAlert", sweetAlertScript, false);
+    }
+
+    //------------------============{ Sweet Alert Advnce }============------------------
 
     // sweet alert custom html, button and link
-    protected void btn1_Click(object sender, EventArgs e)
+    protected void SA_Custom_Html_Link_Click(object sender, EventArgs e)
     {
         string title = "HTML example";
         string icon = "info";
@@ -105,7 +213,7 @@ public partial class Sweet_Alert_SweetAlert : System.Web.UI.Page
     }
 
     // sweet alert dialouge with three buttons
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void SA_Three_Buttons_Dialouge_Click(object sender, EventArgs e)
     {
         string title = "Do you want to save the changes?";
         bool showDenyButton = true;
